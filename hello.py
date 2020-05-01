@@ -1,19 +1,11 @@
-from flask import Flask
-from flask import request
-from flask import make_response
+from flask import Flask, render_template
+#from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 @app.route('/')
 def index():
-    response = make_response('<h2>This document carries a coockie</h2>')
-    response.set_cookie('answer','42')
-    return response
-"""
-    user_agent = request.headers.get('User-agent')
-    return '<p>Your browser agent is {}</p>'.format(user_agent)
-
+    return render_template('index.html')
 
 @app.route('/user/<name>')
 def user(name):
     return render_template('user.html', name=name)
-"""
